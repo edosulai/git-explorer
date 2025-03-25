@@ -1,3 +1,4 @@
+// Interface representing a GitHub profile
 export interface GitHubProfile {
   login: string;
   id: number;
@@ -19,6 +20,7 @@ export interface GitHubProfile {
   site_admin: boolean;
 }
 
+// Interface representing a GitHub user with additional details
 export interface GitHubUser extends GitHubProfile {
   user_view_type: string;
   name: string;
@@ -37,6 +39,7 @@ export interface GitHubUser extends GitHubProfile {
   updated_at: string;
 }
 
+// Interface representing a GitHub repository
 export interface GitHubRepository {
   id: number;
   node_id: string;
@@ -104,21 +107,22 @@ export interface GitHubRepository {
   default_branch: string;
 }
 
+// Interface representing the structure of a GitHub README file
 export interface GitHubREADME {
-  name: string;
-  path: string;
-  sha: string;
-  size: number;
-  url: string;
-  html_url: string;
-  git_url: string;
-  download_url: string;
-  type: string;
-  content: string;
-  encoding: string;
+  name: string; // Name of the file
+  path: string; // Path to the file in the repository
+  sha: string; // SHA hash of the file
+  size: number; // Size of the file in bytes
+  url: string; // API URL to access the file
+  html_url: string; // URL to view the file in the browser
+  git_url: string; // Git URL to access the file
+  download_url: string; // URL to download the file
+  type: string; // Type of the file (e.g., "file")
+  content: string; // Base64 encoded content of the file
+  encoding: string; // Encoding of the content (e.g., "base64")
   _links: {
-    self: string;
-    git: string;
-    html: string;
+    self: string; // URL to access this resource
+    git: string; // Git URL to access this resource
+    html: string; // HTML URL to view this resource
   };
 }
